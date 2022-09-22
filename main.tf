@@ -36,7 +36,7 @@ module "eks_blueprints" {
   managed_node_groups = {
     mg_5 = {
       node_group_name = local.node_group_name
-      instance_types  = ["t3.large"]
+      instance_types  = ["t3.medium"]
       subnet_ids      = module.vpc.private_subnets
     }
   }
@@ -115,7 +115,7 @@ module "vpc" {
 module "kubernetes_addons" {
   source = "github.com/aws-ia/terraform-aws-eks-blueprints?ref=v4.9.0/modules/kubernetes-addons"
 
-  eks_cluster_id     = module.eks_blueprints.eks_cluster_id
+  eks_cluster_id = module.eks_blueprints.eks_cluster_id
 
   #---------------------------------------------------------------
   # ARGO CD ADD-ON
@@ -125,8 +125,8 @@ module "kubernetes_addons" {
   argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying Add-ons.
 
   argocd_applications = {
-    addons    = local.addon_application
-    #workloads = local.workload_application #We comment it for now
+    addons = local.addon_application
+    workloads = local.workload_application #We comment it for now
   }
 
   # This example shows how to set default ArgoCD Admin Password using SecretsManager with Helm Chart set_sensitive values.
