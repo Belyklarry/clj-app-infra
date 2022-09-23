@@ -31,7 +31,7 @@ Followed by:
 ```console
 terraform apply -auto-approve
 ```
-This deploys the application in the cluster.
+This deploys the application into the cluster.
 ## Access the EKS cluster and Application
 After the deployment, a command to access the EKS cluster will be displayed in the outputs. Run that command.
 You can now use kubectl to check what’s in the cluster.
