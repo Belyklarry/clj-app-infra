@@ -42,3 +42,21 @@ Kubectl -n clj-microservices get ingress
 Copy and paste the ingress URL of the clj-microservices app on your browser and the front-end of the application will be displayed.
 
 **NB: For more information on the solution, read the ```solution-documentation.md``` file.**
+
+## Cleanup
+In order to let Terraform cleanup all resources that it has created, we first need to delete the resources created outside Terraform like the load balancer and EBS volume. For that, we comment out the line deploying our workloads in the ```main.tf``` file. For the changes to take effect, run:
+```console
+terraform apply -auto-approve
+```
+**First remove the ```kubernetes_module```:**
+```console
+terraform destroy -target=module.kubernetes_addons -auto-approve
+```
+**We can now safetly delete our EKS cluster:**
+```console
+terraform destroy -target=module.eks_blueprints -auto-approve
+```
+**Finally we can delete the VPC and all remaining services**
+```console
+terraform destroy -auto-approve
+```
