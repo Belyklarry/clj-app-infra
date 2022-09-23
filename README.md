@@ -7,6 +7,7 @@
 * Git
 * Terraform
 * Kubectl
+* jq
 ## AWS Account
 If you do not have an AWS account, follow the instructions on this [link](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) on how to set it up.
 [Create](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) a user with Admin Privileges and [configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html) your local machine to use those credentials.
