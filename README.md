@@ -29,4 +29,5 @@ To access the application on your browser, run:
 Kubectl -n clj-microservices get ingress
 ```
 Copy and paste the ingress URL of the clj-microservices app on your browser and the front-end of the application will be displayed.
+
 NB: For more information on the solution, read the ```solution-documentation.md``` file. 
