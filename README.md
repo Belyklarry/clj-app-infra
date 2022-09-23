@@ -21,6 +21,16 @@ Now run: ```terraform init```
 After initializing the repo with Terraform, run: ```terraform plan```. This is to see what terraform will deploy on AWS on your behalf.
 Finally, run: ```terraform apply```. This will show you the plan again and you’ll have to respond to the prompt with a “yes”.
 The deployment will take about 15 minutes or so.
+## Deploy Application
+In ```main.tf```, in the ```kubernetes_addons``` module, the workload is commented out. Uncomment it, save the file, and again run:
+```console
+terraform plan
+```
+Followed by:
+```console
+terraform apply -auto-approve
+```
+This deploys the application in the cluster.
 ## Access the EKS cluster and Application
 After the deployment, a command to access the EKS cluster will be displayed in the outputs. Run that command.
 You can now use kubectl to check what’s in the cluster.
