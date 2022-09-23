@@ -10,7 +10,7 @@ Deploying our EKS clusters manually in AWS using the AWS console is time-consumi
 ## EKS Blueprints for Terraform
 Instead of deploying our EKS cluster using the default EKS module offered by Terraform, we’ll make use of the EKS blueprints for Terraform. EKS Blueprints enable us to compose complete EKS clusters that are fully bootstrapped with the operational software that is needed to deploy and operate workloads. With EKS Blueprints, you describe the configuration of the desired state of your EKS environment, such as the control plane, worker nodes, and Kubernetes add-ons as an IaC blueprint. Once the blueprint has been configured, you can use it to deploy consistent environments across multiple AWS accounts and Regions using continuous deployment automation, for example, GitLab CI/CD.
 # Blueprint for our Development Environment
-In our clj-app-infra repo, the terraform configuration files (or manifests) are the ones with the .tf extension. Now let us go into what each of the manifests does.
+In our ```clj-app-infra``` repo, the terraform configuration files (or manifests) are the ones with the .tf extension. Now let us go into what each of the manifests does.
 
 ## The providers.tf manifest
 Providers in Terraform are plugins that allow users to manage external APIs. Provider plugins, like the AWS provider, act as the translation layer that allows Terraform to communicate with many different cloud providers, databases, and services. Before we can execute any terraform CLI commands, we need to tell Terraform the versions of the providers we are using, as well as the version of Terraform to use.
