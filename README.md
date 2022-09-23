@@ -48,7 +48,7 @@ In order to let Terraform cleanup all resources that it has created, we first ne
 ```console
 terraform apply -auto-approve
 ```
-**First remove the ```kubernetes_module```:**
+**First remove the ```kubernetes_addons``` module:**
 ```console
 terraform destroy -target=module.kubernetes_addons -auto-approve
 ```
